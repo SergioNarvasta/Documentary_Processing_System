@@ -1,0 +1,25 @@
+&&Instaciamos la clase
+Local loCliente1
+Clear
+loCliente1 = Createobject("Cliente")
+
+With loCliente1
+  .nCodigo = 558444
+  .cNombre = "Sebastian"
+  .cRubro  = "Agrario"
+  .cSector = "Privado" 
+Endwith
+
+Release loCliente1
+Return
+
+&&Definimos nuestra clase Base
+Define Class Cliente AS CUSTOM
+  nCodigo = integer
+  cNombre = Space(22)
+  cRubro = Space(15)
+  cSector = Space(16)
+ Procedure MostrarDatos
+  ? This.cCodigo, This.cNombre, This.cRubro, This.cSector
+ Endproc
+Enddefine 
