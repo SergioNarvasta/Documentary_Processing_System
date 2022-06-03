@@ -29,7 +29,7 @@ Select
       a.OCEstatus			   ,      a.Criticidad			   ,      a.Pareto				   ,      a.CodAnt				   ,
       a.CantBultos			   ,      a.NroUniTrans		       ,
 		ISNULL(convert(char(10),a.FechaContrato,103),'')as FechaContratoC,
-		ISNULL(a.IdClasificacionCEX,'') +  ' - ' +ISNULL(a.IdFamiliaCEX,'')                                   ,
+		ISNULL(a.IdClasificacionCEX,'') +  ' - ' +ISNULL(a.IdFamiliaCEX,'') AS 'FAMILIA-TIPO'        ,
 		ISNULL(convert(char(10),a.FechaVenFactura,103),'')as FechaVenFacturaC,
 		ISNULL(convert(char(10),a.FechaBL,103),'')as FechaBLC,
 		ISNULL(convert(char(10),a.FechaETDIni,103),'')as FechaETDIniC,
