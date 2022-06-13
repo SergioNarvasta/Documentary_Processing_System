@@ -1,3 +1,4 @@
+use EQUILIBRA_V17
 Select 
       a.cia_codcia			   ,      a.IdImportacion		   ,      a.Año					   ,      a.TipoCodigo			   ,
       a.Correlativo			   ,      a.Parcial01			   ,      a.Parcial02			   ,      a.CodigoImportacion	   ,
