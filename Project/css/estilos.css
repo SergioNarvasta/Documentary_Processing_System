@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container.centered {
+  display: grid;
+  place-content: center;
+}
+
+.container.fullscreen {
+  min-height: 100vh;
+}
+
+.principalpersonal__main-option {
+  display: flex;
+  padding: 22px;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px #dadada;
+  transition: all 0.4s ease;
+  background-color: #131313;
+  color: #f5f5f5;
+}
+
+.principalpersonal__main-option:hover {
+  color: #f5f5f5;
+  background-color: #1d1d1d;
+  transform: scale(1.02);
+}
+
+.principalpersonal__footer {
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.principalpersonal__footer
+  .principalpersonal-footer__option:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+.update-form {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+}
+
+.update-form .left,
+.update-form .right {
+  width: 45%;
+}
+
+.update-form .left {
+  margin-right: 12px;
+}
+
+.form-filters {
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.form-filters .form-filters__dateinputs,
+.form-filters .form-filters__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.admin__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.admin__options .admin__option {
+  background-color: #1d1d1d;
+  color: #f5f5f5;
+  height: 200px;
+  width: 280px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  transition: all ease-out 0.2s;
+}
+
+.admin__options .admin__option:hover {
+  transform: scale(1.02);
+}
