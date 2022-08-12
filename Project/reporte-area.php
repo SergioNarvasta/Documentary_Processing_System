@@ -15,7 +15,7 @@
         WHERE p.idusuario = $idusuario";
 
     $f = mysqli_query($cn,$sqlEmpleadoArea);
-    $registrosValidos = mysql_num_rows($f);
+    $registrosValidos = mysqli_num_rows($f);
     $existeEmpleado = $registrosValidos > 0;
 
     if ($existeEmpleado == FALSE) {
@@ -35,7 +35,7 @@
                     WHERE t.idarea = $areaPersonal";
 
     // echo $sqlRegistrosArea;
-    $filaRegistros = mysql_query($sqlRegistrosArea, $cn);
+    $filaRegistros = mysqli_query( $cn,$sqlRegistrosArea);
     $numRegistrosValidos = 0;
 ?>
 <!DOCTYPE html>
