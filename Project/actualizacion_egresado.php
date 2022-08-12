@@ -28,7 +28,7 @@
 						<?php 
 						//trabajar con base de datos
 						$sql="select * from escuela";
-						$fila=mysql_query($sql,$cn);
+						$fila=mysqli_query($cn,$sql);
 						while ($r=mysqli_fetch_array($fila)) {
 						?>
 						<option value="<?php echo $r['idescuela']; ?>"><?php echo $r['escuela']; ?></option>

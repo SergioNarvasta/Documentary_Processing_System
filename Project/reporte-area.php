@@ -74,24 +74,24 @@
                                 ON ht.idestadotramite = et.idestadotramite 
                             WHERE idtramite = '$idtramite' ORDER BY ht.fechaactualizacion DESC LIMIT 1";
 
-                        $filaEstadoTramite = mysql_query($sqlEstadoTramite, $cn);
+                        $filaEstadoTramite = mysqli_query($cn,$sqlEstadoTramite);
                         $estadoTramite = mysqli_fetch_array($filaEstadoTramite);
 
                         $tipousuarioTramite = $r["idtipousuario"];
                         if ($tipousuarioTramite == 1) { // alumno
                             $sqlRemitente = "SELECT * FROM alumno WHERE idusuario = $idusuarioTramite";
-                            $f = mysql_query($sqlRemitente, $cn);
+                            $f = mysqli_query($cn,$sqlRemitente);
                             $rusuario = mysqli_fetch_array($f);
                             $remitente = "".$rusuario["apellidos"]." ".$rusuario["nombres"];
                             
                         } else if ($tipousuarioTramite == 2) { // egresado
                             $sqlRemitente = "SELECT * FROM egresado WHERE idusuario = $idusuarioTramite";
-                            $f = mysql_query($sqlRemitente, $cn);
+                            $f = mysqli_query($cn,$sqlRemitente);
                             $rusuario = mysqli_fetch_array($f);
                             $remitente = "".$rusuario["apellidos"]." ".$rusuario["nombres"];
                         } else if ($tipousuarioTramite == 3) { // institucion
                             $sqlRemitente = "SELECT * FROM institucion WHERE idusuario = $idusuarioTramite";
-                            $f = mysql_query($sqlRemitente, $cn);
+                            $f = mysqli_query($cn,$sqlRemitente);
                             $rusuario = mysqli_fetch_array($f);
                             $remitente = $rusuario["razonsocial"];
                         }
@@ -159,7 +159,7 @@
                                 <option value disabled selected>-- SELECCIONA UN MOTIVO --</option>
                                 <?php
                                     $sqlMotivo = "SELECT * FROM motivo";
-                                    $f = mysql_query($sqlMotivo, $cn);
+                                    $f = mysqli_query($cn,$sqlMotivo);
                                     while ($r = mysqli_fetch_array($f)) {
                                 ?>
                                     <option value="<?php echo $r["idmotivo"] ?>">
