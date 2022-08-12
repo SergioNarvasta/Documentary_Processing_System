@@ -9,9 +9,7 @@
 
     $limit = isset($_GET["limit"]) ? $_GET["limit"] : 5;
     $from = isset($_GET["desde"]) ? $_GET["desde"] : 0;
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +41,8 @@
 
                 $sqlTotalUsuarios = "SELECT * FROM usuario";
     
-                $filaTotal = mysql_query($sqlTotalUsuarios, $cn);
-                $fila = mysql_query($sqlUsers, $cn);
+                $filaTotal = mysqli_query($cn,$sqlTotalUsuarios);
+                $fila = mysqli_query($cn,$sqlUsers);
 
                 while($r = mysqli_fetch_array($fila)){
             ?>
@@ -83,7 +81,7 @@
         </table>
         <div class="p-4 is-flex is-justify-content-center">
             <?php
-                $total = mysql_num_rows($filaTotal);
+                $total = mysqli_num_rows($filaTotal);
                 $numPaginas = ceil($total / $limit);
 
                 for($i = 0; $i < $numPaginas; $i++) {

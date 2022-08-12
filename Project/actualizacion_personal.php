@@ -22,7 +22,7 @@
 					ON p.idarea = a.idarea
 				WHERE p.idusuario = $codusuario";
 
-		$fData = mysql_query($sqlDatosPersonal);
+		$fData = mysqli_query($cn,$sqlDatosPersonal);
 		$rData = mysqli_fetch_array($fData);
 	?>
 </head>
@@ -50,7 +50,7 @@
 							$sqlEscuela = "SELECT * 
 								FROM escuela";
 
-							$f = mysql_query($sqlEscuela, $cn);
+							$f = mysqli_query($cn,$sqlEscuela);
 							while($r = mysqli_fetch_array($f)){
 						?>
 							<option value="<?php echo $r["idescuela"]?>"
@@ -73,7 +73,7 @@
 							$sqlArea = "SELECT * 
 								FROM area";
 
-							$f = mysql_query($sqlArea, $cn);
+							$f = mysqli_query($cn,$sqlArea);
 							while ($r = mysqli_fetch_array($f)) {
 						?>
 							<option value="<?php echo $r["idarea"] ?>"
