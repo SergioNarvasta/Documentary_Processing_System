@@ -3,7 +3,6 @@
     function regresarARegister($message) {
         header("location: register.php?error=true&m=$message");
     }
-
     if (isset($_POST["username"], $_POST["password"], $_POST["repassword"], $_POST["tipousuario"]) == FALSE) {
         regresarARegister("Todos los campos deben ser rellenados correctamente");
     } else {
@@ -19,9 +18,9 @@
                 $sqlUser = "INSERT INTO usuario(username, password, idtipousuario, idestadocuenta)
                     VALUES ('$usuario', '$password', $tipousuario, 1)";
 
-                mysql_query($sqlUser); // crea el usuario
+                mysqli_query($cn,$sqlUser); // crea el usuario
                 $sqlConsultaNuevoUsuario = "SELECT * FROM usuario WHERE username = '$usuario'";
-                $fila = mysql_query($sqlConsultaNuevoUsuario);
+                $fila = mysqli_query($cn,$sqlConsultaNuevoUsuario);
                 $nuevoUsuario = mysqli_fetch_array($fila);
                 
                 // registrar en tabla segun el tipo de usuario
@@ -38,10 +37,7 @@
                     }
                 }
 
-
-
-                mysql_query($sqlDatos); // crea la entidad segun el tipo de usuario
-
+                mysqli_query($cn,$sqlDatos); // crea la entidad segun el tipo de usuario
 
                 header("location: index.php?error=false&m=El usuario se creo correctamente!");
             } else {
@@ -49,11 +45,8 @@
             }
         } else {
             regresarARegister("El usuario y la contraseña deben contener al menos 8 caracteres");
-        }
-        
+        }  
     
     }    
-
-
 
 ?>
