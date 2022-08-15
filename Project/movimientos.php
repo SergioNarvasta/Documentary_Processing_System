@@ -7,8 +7,17 @@ $tipo=$_SESSION['tipo'];
 
 $tipo_usuario=$_GET['tipo'];
 $codigo=$_GET['idtramite'];
-//trabajar con la base de datos
-$sql="select a.*,u.*,t.*,tip.*,ar.*,h.*,e.* from $tipo_usuario a,usuario u, tramite t, tipotramite tip,area ar, historialtramite h, estadotramite e where a.idusuario=u.idusuario and u.idusuario=t.idusuario and t.idtipotramite=tip.idtipotramite and t.idarea=ar.idarea and t.idtramite=h.idtramite and h.idestadotramite=e.idestadotramite and t.idtramite='$codigo' Order by h.fechaactualizacion desc";
+
+$sql="select a.*,u.*,t.*,tip.*,ar.*,h.*,e.* 
+      from $tipo_usuario a,usuario u, tramite t, tipotramite tip,area ar, historialtramite h, estadotramite e 
+	  where a.idusuario     = u.idusuario and 
+	        u.idusuario     = t.idusuario and 
+			t.idtipotramite = tip.idtipotramite and 
+	        t.idarea        = ar.idarea and 
+			t.idtramite     = h.idtramite and 
+			h.idestadotramite=e.idestadotramite and 
+	  t.idtramite='$codigo' 
+	  Order by h.fechaactualizacion desc";
 $fila=mysqli_query($cn,$sql);
 ?>
 <!DOCTYPE html>

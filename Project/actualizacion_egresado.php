@@ -26,7 +26,7 @@
 				<div class="select">
 					<select name="lstescuela">
 						<?php 
-						//trabajar con base de datos
+						
 						$sql="select * from escuela";
 						$fila=mysqli_query($cn,$sql);
 						while ($r=mysqli_fetch_array($fila)) {

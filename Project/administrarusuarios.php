@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMINISTRA USUARIOS</title>
+    <title>GESTION DE USUARIOS</title>
     <?php
         include("cabecera.php");
     ?>

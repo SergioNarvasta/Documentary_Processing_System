@@ -24,6 +24,7 @@
             <select id="tipousuario" name="tipousuario" required>
                 <option disabled selected value>--Selecciona un tipo de usuario--</option>
                 <?php
+                
                     while ($r = mysqli_fetch_array($fila)) {
                 ?>
                 <option value="<?php echo $r["idtipousuario"]?>">
