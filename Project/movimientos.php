@@ -87,7 +87,6 @@ $password=$r['password'];
 				<td><?php echo $r['estadotramite']; ?></td>
 				<td><?php echo $r['fechaactualizacion']; ?></td>
 			</tr>
-	
 <?php  
 }
 ?>
