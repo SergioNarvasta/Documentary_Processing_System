@@ -43,7 +43,6 @@ $tipo=$_SESSION['tipo'];
 			margin: auto;
 			text-align: center;
 			font-weight: bold;
-			
 		}
 	</style>
 	<?php
