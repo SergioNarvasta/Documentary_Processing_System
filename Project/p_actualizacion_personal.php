@@ -5,7 +5,7 @@
 
     $codusuario = $_SESSION["usuario"];
 
-    // correr validaciones
+    // Validaciones
     if (isset($_POST["txtcodigoadministrativo"], $_POST["txtdni"], $_POST["txtescuela"], $_POST["txtemail"],
     $_POST["txtcel"], $_POST["txtdireccion"], $_POST["txtapellidos"], $_POST["txtnombres"], $_POST["txtarea"])) {
         $codigoadministrativo = $_POST["txtcodigoadministrativo"];

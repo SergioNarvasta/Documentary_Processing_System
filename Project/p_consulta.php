@@ -1,9 +1,11 @@
 <?php 
+
 	//recepcionar los datos
 	include("utils/conexion.php");
 	include('utils/auth.php');
 	$c=$_SESSION['usuario'];
 	$tipo=$_SESSION['tipo'];
+
 	//obtener tipousuario
 	$sql="select * from tipousuario where idtipousuario=$tipo";
 	$f=mysqli_query($cn,$sql);
@@ -11,7 +13,7 @@
 
 	$tipo_usuario=$r['tipousuario'];
 	$tipo_usuario=strtolower($tipo_usuario);
-	//
+	
 	//Metodo get
 	if (isset($_GET["idtramite"])) {
 		$codigo=$_GET['idtramite'];
@@ -23,6 +25,7 @@
 	}else{
 		$password=$_POST['password'];
 	}
+
 	//trabajar con la base de datos
 	include("utils/conexion.php");
 	$sql="SELECT * from tramite where idtramite='$codigo' and password='$password'";
@@ -35,9 +38,16 @@
 
 	$sql = "SELECT 
 		a.*,u.*,t.*,tip.*,ar.*,h.*,e.* 
-		FROM $tipo_usuario a,usuario u, tramite t, tipotramite tip,area ar, historialtramite h, estadotramite e where a.idusuario=u.idusuario and u.idusuario=t.idusuario and t.idtipotramite=tip.idtipotramite and t.idarea=ar.idarea and t.idtramite=h.idtramite and h.idestadotramite=e.idestadotramite and t.idtramite='$idtramite' Order by h.fechaactualizacion desc Limit 1";
-	
-	
+		FROM $tipo_usuario a,usuario u, tramite t, tipotramite tip,area ar, historialtramite h, estadotramite e 
+		where a.idusuario=u.idusuario and 
+		      u.idusuario=t.idusuario and 
+			  t.idtipotramite=tip.idtipotramite and 
+			  t.idarea=ar.idarea and 
+			  t.idtramite=h.idtramite and 
+			  h.idestadotramite=e.idestadotramite and 
+			  t.idtramite='$idtramite' 
+			  Order by h.fechaactualizacion desc Limit 1";
+
 	$f=mysqli_query($cn,$sql);
 	if (mysqli_num_rows($f)==0) {
 		header('location:principal.php');
