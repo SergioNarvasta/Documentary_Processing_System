@@ -28,7 +28,6 @@
             historialtramite (idtramite, idestadotramite)
             VALUES ('$idTramite', $nuevoEstado)";
 
-
         echo $sqlActualizaEstado;
         mysqli_query($cn,$sqlActualizaEstado);
 
@@ -38,7 +37,6 @@
         } else {
             header("location: reporte-area.php");
         }
-
 
     } else {
         header("location: principal.php");
