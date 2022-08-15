@@ -33,8 +33,7 @@
                     INNER JOIN area AS a
                     ON a.idarea = t.idarea
                     WHERE t.idarea = $areaPersonal";
-
-    // echo $sqlRegistrosArea;
+                    
     $filaRegistros = mysqli_query( $cn,$sqlRegistrosArea);
     $numRegistrosValidos = 0;
 ?>

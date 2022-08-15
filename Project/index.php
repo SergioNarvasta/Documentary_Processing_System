@@ -11,7 +11,6 @@
             header("location: principal-administrador.php");
         }
     }
-
 ?>
 
 <!DOCTYPE html>
