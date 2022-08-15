@@ -10,6 +10,7 @@
 		include('cabecera.php');
 		$codigo=$_SESSION['usuario'];
 		$tipo=$_SESSION['tipo'];
+
 		//recepcionar los datos del tramite
 		$tipotramite=$_POST['tipotramite'];
 		$area=$_POST['area'];
@@ -18,6 +19,7 @@
 		$archivo=$_FILES['archivo']['tmp_name'];
 		$nombre=$_FILES['archivo']['name'];
 		$password=generamepassword();
+		
 		//insertar tramite
 		$sql="insert into tramite(idtramite,idusuario,idarea,idtipotramite,asunto,password) values('$idtramite',$codigo,$area,$tipotramite,'$asunto','$password')";
 		mysqli_query($cn,$sql);

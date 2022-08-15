@@ -12,7 +12,6 @@
     if ($rTipoUsuario["idtipousuario"] != 5) {
         header("principal.php");
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

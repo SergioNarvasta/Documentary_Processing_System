@@ -13,7 +13,6 @@
 	$tipo_usuario=strtolower($tipo_usuario);
 
 ?>
-
 <?php
 
     if (isset($_SESSION["auth"]) && $_SESSION["auth"] == "1") {
@@ -24,7 +23,6 @@
         }
     }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>

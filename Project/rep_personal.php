@@ -24,7 +24,7 @@ $cont = 1;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Alumnos</title>
+    <title>Reporte de Personal</title>
     <h1>Reporte de Solicitudes de Personal</h1>
 </head>
 <body> 
