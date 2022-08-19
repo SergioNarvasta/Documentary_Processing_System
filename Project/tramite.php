@@ -49,6 +49,7 @@ $tipo=$_SESSION['tipo'];
 		include("cabecera.php");
 	?>
 	<title>Tramite</title>
+	
 </head>
 <body>
 <br><br>
