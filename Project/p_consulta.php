@@ -103,6 +103,7 @@
 <p>Fecha de actualizacion</p>
 <p><?php echo $r['fechaactualizacion']; ?></p>
 <br>
+
 <center>
 	<table class="table is-hoverable is-bordered" style="width:100%;">
 			<tr>

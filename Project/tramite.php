@@ -49,7 +49,7 @@ $tipo=$_SESSION['tipo'];
 		include("cabecera.php");
 	?>
 	<title>Tramite</title>
-	
+
 </head>
 <body>
 <br><br>
@@ -67,9 +67,7 @@ $tipo=$_SESSION['tipo'];
 						while ($r=mysqli_fetch_array($fila)) {
 						?>
 						<option value="<?php echo $r['idtipotramite']; ?>"><?php echo $r['tipotramite']; ?></option>
-						<?php 
-						}
-						?>
+						<?php } ?>
 						</select>
 					</div>
 				</div>
