@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-
     if (isset($_SESSION["auth"]) && $_SESSION["auth"] == "1") {
         if ($_SESSION["tipo"] == "1" || $_SESSION["tipo"] == "2" || $_SESSION["tipo"] == "3") {
             header("location: principal.php");
